@@ -38,8 +38,8 @@ BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
 
 echo "executing bundle show"
 bundle show --paths
-echo "error code was"
 echo $?
+echo "was the error code"
 
 # Source commands in buildpack-run.sh (i.e. the commmands in buildpack-run.sh
 # are executed in the current shell, not in a new shell as it would be the case
