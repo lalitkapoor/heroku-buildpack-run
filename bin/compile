@@ -37,7 +37,7 @@ BUNDLE_GEMFILE="$BUILD_DIR/Gemfile"
 BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
 
 echo "executing bundle show"
-$BUILD_DIR/vendor/ruby-2.2.4/bin/ruby $BUNDLE_PATH/bin/bundle show --paths
+$BUILD_DIR/vendor/ruby-2.2.4/bin/ruby $BUNDLE_PATH/bin/bundle show skim
 echo $?
 echo "was the error code"
 
