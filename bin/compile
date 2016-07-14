@@ -29,12 +29,12 @@ cd "$BUILD_DIR"
 
 echo "Sourcing buildpack-run.sh" | sed 's/^/-----> /'
 
-PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0/bin:$PATH"
-GEM_PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0"
-BUNDLE_PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0"
-BUNDLE_BIN="$BUILD_DIR/vendor/bundle/ruby/2.2.0/bin/bundle"
-BUNDLE_GEMFILE="$BUILD_DIR/Gemfile"
-BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
+#PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0/bin:$PATH"
+#GEM_PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0"
+#BUNDLE_PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0"
+#BUNDLE_BIN="$BUILD_DIR/vendor/bundle/ruby/2.2.0/bin/bundle"
+#BUNDLE_GEMFILE="$BUILD_DIR/Gemfile"
+#BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
 
 RUBY_VERSION=`cat gemfile_includes/Gemfile.common | grep ^ruby | awk '{print $2}' | cut -d "'" -f 2`
 
