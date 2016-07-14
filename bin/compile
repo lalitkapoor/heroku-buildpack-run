@@ -37,7 +37,7 @@ BUNDLE_GEMFILE="$BUILD_DIR/Gemfile"
 BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
 
 echo "executing bundle show"
-bundle show --paths
+$BUNDLE_PATH/bin/bundle show --paths
 echo $?
 echo "was the error code"
 
