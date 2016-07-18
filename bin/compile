@@ -39,6 +39,8 @@ echo "Sourcing buildpack-run.sh" | sed 's/^/-----> /'
 RUBY_VERSION=`cat gemfile_includes/Gemfile.common | grep ^ruby | awk '{print $2}' | cut -d "'" -f 2`
 BUNDLE_PATH=`echo $(echo $RUBY_VERSION | cut -d "." -f 1).$(echo $RUBY_VERSION | cut -d "." -f 1).0`
 
+find $BUILD_DIR/vendor -type d
+
 echo "executing bundle show"
 $BUILD_DIR/vendor/ruby-$RUBY_VERSION/bin/ruby $BUNDLE_PATH/bin/bundle show skim
 echo $?
