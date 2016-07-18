@@ -29,25 +29,6 @@ cd "$BUILD_DIR"
 
 echo "Sourcing buildpack-run.sh" | sed 's/^/-----> /'
 
-#PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0/bin:$PATH"
-#GEM_PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0"
-#BUNDLE_PATH="$BUILD_DIR/vendor/bundle/ruby/2.2.0"
-#BUNDLE_BIN="$BUILD_DIR/vendor/bundle/ruby/2.2.0/bin/bundle"
-#BUNDLE_GEMFILE="$BUILD_DIR/Gemfile"
-#BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
-
-RUBY_VERSION=`cat gemfile_includes/Gemfile.common | grep ^ruby | awk '{print $2}' | cut -d "'" -f 2`
-BUNDLE_PATH=`echo $BUILD_DIR/vendor/bundle/ruby/$(echo $RUBY_VERSION | cut -d "." -f 1).$(echo $RUBY_VERSION | cut -d "." -f 1).0`
-
-find $BUILD_DIR/vendor -type d
-
-echo "executing bundle show"
-CMD="$BUILD_DIR/vendor/ruby-$RUBY_VERSION/bin/ruby $BUNDLE_PATH/bin/bundle show skim"
-echo "THE COMMAND IS $CMD"
-$BUILD_DIR/vendor/ruby-$RUBY_VERSION/bin/ruby $BUNDLE_PATH/bin/bundle show skim
-echo $?
-echo "was the error code"
-
 # Source commands in buildpack-run.sh (i.e. the commmands in buildpack-run.sh
 # are executed in the current shell, not in a new shell as it would be the case
 # if buildpack-run.sh was a script). The build can be aborted with 'exit 1'.
