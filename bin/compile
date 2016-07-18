@@ -44,7 +44,7 @@ find $BUILD_DIR/vendor -type d
 echo "executing bundle show"
 CMD="$BUILD_DIR/vendor/ruby-$RUBY_VERSION/bin/ruby $BUNDLE_PATH/bin/bundle show skim"
 echo "THE COMMAND IS $CMD"
-$CMD
+$BUILD_DIR/vendor/ruby-$RUBY_VERSION/bin/ruby $BUNDLE_PATH/bin/bundle show skim"
 echo $?
 echo "was the error code"
 
