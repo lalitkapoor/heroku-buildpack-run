@@ -37,7 +37,7 @@ echo "Sourcing buildpack-run.sh" | sed 's/^/-----> /'
 #BUNDLE_CONFIG="$BUILD_DIR/.bundle/config"
 
 RUBY_VERSION=`cat gemfile_includes/Gemfile.common | grep ^ruby | awk '{print $2}' | cut -d "'" -f 2`
-BUNDLE_PATH=`echo $(echo $RUBY_VERSION | cut -d "." -f 1).$(echo $RUBY_VERSION | cut -d "." -f 1).0`
+BUNDLE_PATH=`echo $BUILD_DIR/vendor/bundle/ruby/$(echo $RUBY_VERSION | cut -d "." -f 1).$(echo $RUBY_VERSION | cut -d "." -f 1).0`
 
 find $BUILD_DIR/vendor -type d
 
