@@ -32,4 +32,4 @@ echo "Sourcing buildpack-run.sh" | sed 's/^/-----> /'
 # Source commands in buildpack-run.sh (i.e. the commmands in buildpack-run.sh
 # are executed in the current shell, not in a new shell as it would be the case
 # if buildpack-run.sh was a script). The build can be aborted with 'exit 1'.
-source ./buildpack-run.sh
+./buildpack-run.sh
